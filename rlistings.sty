@@ -1,0 +1,36 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{rlistings}[2018/05/04 listings specification for R language]
+
+\RequirePackage{listings}
+\RequirePackage[usenames,dvipsnames]{color}
+\RequirePackage[lighttt]{lmodern}
+
+\ttfamily
+\DeclareFontShape{T1}{lmtt}{m}{it}
+     {<->sub*lmtt/m/sl}{}
+
+\lstset{ 
+  language = R,                     % the language of the code
+  alsoletter  = {.,_},
+  basicstyle = \small\ttfamily, % the size of the fonts that are used for the code
+  showspaces = false,               % show spaces adding particular underscores
+  showstringspaces = false,         % underline spaces within strings
+  showtabs = false,                 % show tabs within strings adding particular underscores
+  tabsize = 2,                      % sets default tabsize to 2 spaces
+  captionpos = b,                   % sets the caption-position to bottom
+  breaklines =true,                % sets automatic line breaking
+  breakatwhitespace = false,        % sets if automatic breaks should only happen at whitespace
+%  frame = single,
+  moredelim={[s][basicstyle]{`}{`}},
+  backgroundcolor = \color[gray]{0.97},
+  rulecolor = \color{Black},
+  commentstyle = \itshape\color[rgb]{0.56,0.35,0.01},
+  stringstyle = \color[rgb]{0.31,0.60,0.02},
+  keywordstyle = \bfseries\textcolor[rgb]{0.13,0.29,0.53},
+  keywordstyle = [2]\bfseries\color[rgb]{0.81,0.36,0.00},
+  keywordstyle = [3]\bfseries\color[rgb]{0.56,0.35,0.01},
+  deletekeywords = {t,q,R,data},
+  otherkeywords = {=,!,<,>,!=,~,$,*,-,+,/,\&,\%/\%,\%*\%,\%\%},
+  morekeywords = [2]{=,!,<,>,!=,~,$,*,-,+,/,\&,\%/\%,\%*\%,\%\%,<-,<<-,<=,>=},
+  morekeywords = [3]{TRUE,FALSE,Inf,NA},
+} 
