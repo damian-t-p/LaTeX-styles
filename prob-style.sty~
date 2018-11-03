@@ -82,6 +82,7 @@
 \newcommand{\rmrightarrow}[1]{\xrightarrow{\mathrm{#1}}}
 \newcommand{\drightarrow}{\rmrightarrow{d}}
 \newcommand{\wrightarrow}{\rmrightarrow{w}}
+\newcommand{\vrightarrow}{\rmrightarrow{v}}
 \newcommand{\asrightarrow}{\rmrightarrow{a.s.}}
 \newcommand{\prightarrow}{\xrightarrow{\Pr}}
 \newcommand{\Lprightarrow}[1]{\xrightarrow{L_{#1}}}
@@ -153,9 +154,11 @@
 {\end{array}\right.}
 
 %%% MATRIX NOTATION %%%
+\newcommand{\Id}{I}
 \newcommand{\transp}{^{\mathrm{T}}}
 \newcommand{\ctransp}{^\dagger}
 \DeclareMathOperator{\Tr}{tr}
+\DeclareMathOperator{\diag}{diag}
 \renewcommand{\vec}{\mathbf}
 \DeclareMathOperator{\op}{op}
 
