@@ -5,8 +5,10 @@
 \RequirePackage{amssymb}
 \RequirePackage{booktabs}          % nice tables
 \RequirePackage{graphicx}
-\RequirePackage[cal=boondox, 
-  frak=euler]{mathalfa}            % mathmode fonts
+\RequirePackage[
+  cal=boondox, 
+  frak=euler
+]{mathalfa}            % mathmode fonts
 \RequirePackage{mathtools}         % extensible arrows
 \RequirePackage{xifthen}           % Better switches for macro definitions
 \RequirePackage{xparse}            % Allows high-level argument passing
@@ -145,6 +147,9 @@
 \DeclareMathOperator*{\argmax}{argmax}
 \DeclareMathOperator*{\argmin}{argmin}
 \DeclareMathOperator{\Lip}{Lip}
+\DeclareMathOperator{\arccosh}{arccosh}
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arctanh}{arctanh}
 
 \renewcommand{\Im}{\mathfrak{Im}}
 \renewcommand{\Re}{\mathfrak{Re}}
