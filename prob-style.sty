@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{prob-style}[2018/05/04 Formatting and notation]
+\ProvidesPackage{prob-style}[2019/04/12 Formatting and notation]
 
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
@@ -8,7 +8,7 @@
 \RequirePackage[
   cal=boondox, 
   frak=euler
-]{mathalfa}            % mathmode fonts
+]{mathalfa}                        % mathmode fonts
 \RequirePackage{mathtools}         % extensible arrows
 \RequirePackage{xifthen}           % Better switches for macro definitions
 \RequirePackage{xparse}            % Allows high-level argument passing
@@ -77,8 +77,9 @@
 \newcommand{\io}{\mathop{}\mathrm{i.o.}}
 \newcommand{\fo}{\mathop{}\mathrm{f.o.}}
 
-\newcommand{\deq}{\stackrel{\mathrm{d}}{=}}
-\newcommand{\aseq}{\stackrel{\mathrm{a.s.}}{=}}
+\newcommand{\@rmeq}[1]{\stackrel{\mathrm{#1}}{=}}
+\newcommand{\deq}{\@rmeq{d}}
+\newcommand{\aseq}{\@rmeq{a.s.}}
 
 %%% MODES OF CONVERGENCE %%%
 \newcommand{\rmrightarrow}[1]{\xrightarrow{\mathrm{#1}}}
@@ -104,6 +105,7 @@
 %%% STATISTICS NOTATION %%%
 \newcommand{\rss}{\textsc{rss}}
 \newcommand{\ols}{\textsc{ols}}
+\DeclareMathOperator{\bias}{Bias}
 
 %%% ANALYSIS NOTATION %%%
 
@@ -162,10 +164,13 @@
 \newcommand{\Id}{I}
 \newcommand{\transp}{^{\mathrm{T}}}
 \newcommand{\ctransp}{^\dagger}
+\newcommand{\inv}{^{-1}}
 \DeclareMathOperator{\Tr}{tr}
 \DeclareMathOperator{\diag}{diag}
 \renewcommand{\vec}{\mathbf}
 \DeclareMathOperator{\op}{op}
+\DeclareMathOperator{\spec}{spec}
+\newcommand{\speceq}{\@rmeq{s}}
 
 %%% ALGEBRA NOTATION %%%
 \DeclareMathOperator{\img}{Im}
