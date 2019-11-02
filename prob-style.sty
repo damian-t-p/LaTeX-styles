@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{prob-style}[2019/04/12 Formatting and notation]
+\ProvidesPackage{prob-style}[2019/10/02 Formatting and notation]
 
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
@@ -125,11 +125,15 @@
   {\@pderiv[#1]{#2}{#3}}
 }
 
+% Removes first character (including backslash) from argument
+\def\cstostr#1{%
+  \expandafter\@gobble\detokenize\expandafter{\string#1}}
+
 % Size macros
 \NewDocumentCommand{\@resizedelimiter}{mmO{}m}{%
   \ifthenelse{\equal{\noexpand#3}{\noexpand\extend}}
     {\left#1#4\right#2}
-    {#3#1#4#3#2}
+    {\csname\cstostr#3l\endcsname#1 #4 \csname\cstostr#3r\endcsname#2}
 }
 \newcommand{\abs}{\@resizedelimiter{\lvert}{\rvert}}
 \newcommand{\floor}{\@resizedelimiter{\lfloor}{\rfloor}}
@@ -220,3 +224,4 @@
 \NewDocumentCommand{\@assemblepartials}{>{\SplitList{,}}m}{
   \ProcessList{#1}{\@buildpartialfromlist}
 }
+
